@@ -9,6 +9,8 @@ geographical data.
 from haversine import haversine
 
 def stations_within_radius(stations, centre, r):
+    """takes station object list, a set of coordinates and a distance.
+    returns a list of stations within that distance away from the set of coordinates. """
     stations_within_r_of_x = []
     for i in stations:
         distance_station_centre = haversine(i.coord, centre)
@@ -47,3 +49,14 @@ def stations_by_river(stations):
         else:
             stations_by_river_dictionary[object.river] = [object]
     return stations_by_river_dictionary
+
+#Task 1E Produce a list with the N rivers having the greatest number of monitoring stations
+
+def rivers_by_station_number(stations, N):
+    list_of_rivers_by_station_number = []
+    counter = 0
+    for i in stations:
+        if i.river = True:
+            counter += 1
+    return list_of_rivers_by_station_number.append((i.name, counter))
+ 
