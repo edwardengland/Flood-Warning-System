@@ -5,9 +5,16 @@
 geographical data.
 
 """
+#Task 1D (1)  Produce a list of rivers with stations without reiteration and in alphabetical order
 
-from .utils import sorted_by_key  # noqa
-
+def rivers_with_station(stations):
+    """takes station object list.
+      returns a set of rivers which have stations."""
+    set_rivers = set()
+    for i in stations:
+        set_rivers.add(i.river)
+    
+    return sorted(set_rivers)
 
 # Task 1D (2)
 

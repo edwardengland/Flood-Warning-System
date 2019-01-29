@@ -1,6 +1,7 @@
 
 from floodsystem.stationdata import build_station_list
 from floodsystem.geo import stations_by_river
+from floodsystem.geo import rivers_with_station
 
 def run():
     """Requirements for Task 1D"""
@@ -9,7 +10,7 @@ def run():
     stations = build_station_list()
 
     # part 1 of task 1D
-    print("Number of stations: {}".format(len(stations)))
+    print(rivers_with_station(stations)[0:10])
 
     # Part 2 of task 1D
     # Print names of stations on a given river in alpha. order
