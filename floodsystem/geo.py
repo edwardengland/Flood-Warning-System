@@ -5,8 +5,23 @@
 geographical data.
 
 """
-#Task 1C Produce a function which returns stations within a certain radius of a coordinate
 from haversine import haversine
+
+# Task 1B: Sort Stations by distance  (EE)
+from floodsystem.utils import *
+
+def stations_by_distance(stations, p):
+    """Takes a list of stations and a co-ordinate, returns a list of tuples sorted by distance"""
+    list_of_tuples = []
+    
+    for i in stations:
+        list_of_tuples.append((i, haversine(i.coord, p)))
+ 
+    return sorted_by_key(list_of_tuples, 1)
+
+
+
+#Task 1C Produce a function which returns stations within a certain radius of a coordinate  (SZ)
 
 def stations_within_radius(stations, centre, r):
     """takes station object list, a set of coordinates and a distance.
@@ -23,7 +38,7 @@ def stations_within_radius(stations, centre, r):
 
 
 
-#Task 1D (1)  Produce a list of rivers with stations without reiteration and in alphabetical order
+#Task 1D (1)  Produce a list of rivers with stations without reiteration and in alphabetical order (SZ)
 
 def rivers_with_station(stations):
     """takes station object list.
@@ -34,7 +49,7 @@ def rivers_with_station(stations):
     
     return sorted(set_rivers)
 
-# Task 1D (2)
+# Task 1D (2)       (EE)
 
 def stations_by_river(stations):
     """takes list of station objects
@@ -56,7 +71,6 @@ def rivers_by_station_number(stations, N):
     list_of_rivers_by_station_number = []
     counter = 0
     for i in stations:
-        if i.river = True:
+        if i.river == True:
             counter += 1
     return list_of_rivers_by_station_number.append((i.name, counter))
- 
