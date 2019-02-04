@@ -11,7 +11,7 @@ def run():
     for x in stations_by_distance(stations, (52.2053, 0.1218)):
         output.append((x[0].name, x[0].town, x[1]))
     
-    print("Closest 10 entries: \t" + str(output[:10]))
+    print("Closest 10 entries: \t" + str(output[:9]))
     print("\nFurthest 10 entries: \t" + str(output[-10:]))
 
 if __name__ == "__main__":
