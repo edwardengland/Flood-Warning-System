@@ -9,10 +9,10 @@ def run():
     # Build list of stations
     stations = build_station_list()
 
-    # Part 1 of task 1D
+    # Part 1 of task 1D (SZ)
     print(rivers_with_station(stations)[0:10])
 
-    # Part 2 of task 1D
+    # Part 2 of task 1D (EE)
     # Print names of stations on a given river in alpha. order
     stations_by_river_dictionary= stations_by_river(stations)
     
