@@ -38,3 +38,22 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
+
+    # Task 1F (EE)
+
+    def typical_range_consistent(self):
+        if self.typical_range is None:
+            return False
+        elif (self.typical_range[1] - self.typical_range[0]) < 0:
+            return False
+        else:
+            return True
+
+
+def inconsistent_typical_range_stations(stations):
+    list_of_incons_stations = []  
+    for i in stations:
+        if i.typical_range_consistent() == False:
+            list_of_incons_stations.append(i)
+
+    return list_of_incons_stations
