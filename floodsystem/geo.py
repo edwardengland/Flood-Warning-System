@@ -70,14 +70,4 @@ def stations_by_river(stations):
 def rivers_by_station_number(stations, N):
     list_of_rivers_by_station_number = []
     
-    for i in stations:
-        list_of_tuples = []
-    for i in stations:
-        counter = 0
-        
-        counter += 1
-    return list_of_rivers_by_station_number.append((i.name, counter))
- 
-        if i.river == True:
-            counter += 1
-    return list_of_rivers_by_station_number.append((i.name, counter))
+    
