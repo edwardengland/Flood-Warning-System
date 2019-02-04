@@ -12,10 +12,11 @@ def run():
     centre = (52.2053, 0.1218) #Cambridge city centre
     r= 10.0 #set radius to 10km
 
-    print(stations_within_radius(stations, centre, r))
-
+    output = []
     for i in stations_within_radius(stations, centre, r):
-        print(sorted(i.name)
+        output.append(i.name)
+        
+    print(sorted(output))
 
 if __name__ == "__main__":
     print("*** Task 1C: CUED Part IA Flood Warning System ***")
