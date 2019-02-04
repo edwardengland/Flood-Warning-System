@@ -68,6 +68,16 @@ def stations_by_river(stations):
 #Task 1E Produce a list with the N rivers having the greatest number of monitoring stations
 
 def rivers_by_station_number(stations, N):
-    list_of_rivers_by_station_number = []
-    
-    
+    list_of_rivers_by_stations_w_dup = []
+    list_of_rivers = []
+
+    for i in stations:
+        list_of_rivers += [i.river]  
+
+    for i in list_of_rivers:
+        list_of_rivers_by_stations_w_dup += [(i, list_of_rivers.count(i))]
+        
+
+    list_of_rivers_by_stations = set(list_of_rivers_by_stations_w_dup)
+
+    sorted_list_of_rivers_by_stations = sorted(list_of_rivers_by_stations, key=[1], reverse = True)
