@@ -65,9 +65,10 @@ def stations_by_river(stations):
             stations_by_river_dictionary[object.river] = [object]
     return stations_by_river_dictionary
 
-#Task 1E Produce a list with the N rivers having the greatest number of monitoring stations
+#Task 1E Produce a list with the N rivers having the greatest number of monitoring stations (SZ)
 
 def rivers_by_station_number(stations, N):
+    """returns first N rivers with highest # stations /river. if rivers have the same number of stations at end of list, all stations with this number of stations are also returned, as well as # of stations."""
     list_of_rivers_by_stations_w_dup = []
     list_of_rivers = []
 
@@ -81,16 +82,22 @@ def rivers_by_station_number(stations, N):
     list_of_rivers_by_stations = set(list_of_rivers_by_stations_w_dup)
 
     sorted_list_of_rivers_by_stations = sorted_by_key(list_of_rivers_by_stations, 1, reverse = True)
-
     
-    for i in sorted_list_of_rivers_by_stations:
-        list_0_to_N = sorted_list_of_rivers_by_stations[0:N]
+    output = []
+    output.append(sorted_list_of_rivers_by_stations[0:N])
 
-        if sorted_list_of_rivers_by_stations[N][1] == sorted_list_of_rivers_by_stations[N+1][1]:
-            list_0_to_N.append(sorted_list_of_rivers_by_stations[N+1][1])
-            N = N+1
+    x=N
+    counter = 0
+    while counter in range(999):
+        if sorted_list_of_rivers_by_stations[x-1][1] == sorted_list_of_rivers_by_stations[x][1]:
+            output.append(sorted_list_of_rivers_by_stations[x])
+            x += 1
+            counter += 1
+        else:
+            counter = 999
+            
         
-        return list_0_to_N
+    return output
 
 
         
