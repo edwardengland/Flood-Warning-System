@@ -1,11 +1,9 @@
 from floodsystem.stationdata import build_station_list as stations
-from floodsystem.geo import rivers_by_station_number
+from floodsystem.utils import *
 
 def test_1E():
     #Task 1E Produce a list with the N rivers having the greatest number of monitoring stations (SZ)
-
     def rivers_by_station_number(stations, N):
-        """returns first N rivers with highest # stations /river. if rivers have the same number of stations at end of list, all stations with this number of stations are also returned, as well as # of stations."""
         list_of_rivers_by_stations_w_dup = []
         list_of_rivers = []
 
