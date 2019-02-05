@@ -17,9 +17,13 @@ def run():
     stations_by_river_dictionary= stations_by_river(stations)
     
     
-    
+    # creates a list to add to
     stations_on_aire = []
+    
+    # takes stations from dictionary
     list_of_stations_aire = stations_by_river_dictionary["River Aire"]
+    
+    # adds just the name of the station to the list and sorts
     for i in list_of_stations_aire:
         stations_on_aire.append(i.name)
     stations_on_aire.sort()

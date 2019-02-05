@@ -14,7 +14,7 @@ def run():
     listy = inconsistent_typical_range_stations(stations)
 
     output = []
-
+    # takes just the name of the stations.
     for i in listy:
             output.append(i.name)
 
