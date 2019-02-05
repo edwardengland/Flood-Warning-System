@@ -80,4 +80,19 @@ def rivers_by_station_number(stations, N):
 
     list_of_rivers_by_stations = set(list_of_rivers_by_stations_w_dup)
 
-    sorted_list_of_rivers_by_stations = sorted(list_of_rivers_by_stations, key=[1], reverse = True)
+    sorted_list_of_rivers_by_stations = sorted_by_key(list_of_rivers_by_stations, 1, reverse = True)
+
+    
+    for i in sorted_list_of_rivers_by_stations:
+        list_0_to_N = sorted_list_of_rivers_by_stations[0:N]
+
+        if sorted_list_of_rivers_by_stations[N][1] == sorted_list_of_rivers_by_stations[N+1][1]:
+            list_0_to_N.append(sorted_list_of_rivers_by_stations[N+1][1])
+            N = N+1
+        
+        return list_0_to_N
+
+
+        
+
+
