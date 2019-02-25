@@ -50,9 +50,6 @@ class MonitoringStation:
         else:
             return True
 
-<<<<<<< HEAD
-        # return self.typical_range is not None and self.typical_range[1] - self.typical_range[0]) >= 0
-=======
     # Task 2B 
     def relative_water_level(self):
     
@@ -67,7 +64,6 @@ class MonitoringStation:
                 
         return fraction_of_typical_range
 
->>>>>>> 4c49a0b18a938005703cc817da90c3e256937e1d
 
 
 def inconsistent_typical_range_stations(stations):
