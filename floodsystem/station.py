@@ -5,10 +5,10 @@
 for manipulating/modifying station data
 
 """
-from floodsystem.stationdata import build_station_list, update_water_levels
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
+
 
     def __init__(self, station_id, measure_id, label, coord, typical_range,
                  river, town):
@@ -29,6 +29,7 @@ class MonitoringStation:
 
         self.latest_level = None
 
+
     def __repr__(self):
         d = "Station name:     {}\n".format(self.name)
         d += "   id:            {}\n".format(self.station_id)
@@ -38,8 +39,6 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
-    
-
 
     # Task 1F (EE)
 
@@ -51,6 +50,21 @@ class MonitoringStation:
         else:
             return True
 
+    # Task 2B 
+    def relative_water_level(self):
+    
+        if self.typical_range is None:
+            return None
+        elif (self.typical_range[1] - self.typical_range[0]) < 0:
+            return None
+        elif self.latest_level == None:
+            return None
+        else:
+            fraction_of_typical_range = ((self.latest_level - self.typical_range[0])/(self.typical_range[1] - self.typical_range[0]))
+                
+        return fraction_of_typical_range
+
+
 
 def inconsistent_typical_range_stations(stations):
     list_of_incons_stations = []  
@@ -59,16 +73,3 @@ def inconsistent_typical_range_stations(stations):
             list_of_incons_stations.append(i)
 
     return list_of_incons_stations
-
-class MonitoringStation:
-
-    # Task 2B 
-    def relative_water_level(self):
-        stations = build_station_list()
-        for station in stations:
-            if station is in inconsistent_typical_range_stations(stations):
-                return None
-            else:
-                fraction_of_typical_range = (station.latest_level - station.typical_range[0])/(station.typical_range[1] - station.typical_range[0])
-                
-    return fraction_of_typical_range
