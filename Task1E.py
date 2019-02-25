@@ -7,7 +7,7 @@ def run():
     # Build list of stations
     stations = build_station_list()
 
-    N=9
+    N=6
     print(rivers_by_station_number(stations, N))
 
 

@@ -49,6 +49,8 @@ class MonitoringStation:
         else:
             return True
 
+        # return self.typical_range is not None and self.typical_range[1] - self.typical_range[0]) >= 0
+
 
 def inconsistent_typical_range_stations(stations):
     list_of_incons_stations = []  
