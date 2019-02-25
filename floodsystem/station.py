@@ -69,6 +69,6 @@ class MonitoringStation:
             if station is in inconsistent_typical_range_stations(stations):
                 return None
             else:
-                fraction_of_typical_range = (station.latest_level - station.typical_range[0])/(station.typical_range[1] - station[0])
+                fraction_of_typical_range = (station.latest_level - station.typical_range[0])/(station.typical_range[1] - station.typical_range[0])
                 
     return fraction_of_typical_range
