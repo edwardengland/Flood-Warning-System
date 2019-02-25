@@ -7,7 +7,8 @@ def run():
     update_water_levels(stations)
 
 
-    print(stations_level_over_threshold(stations, 0.8))
+    for i in stations_level_over_threshold(stations, 0.8):
+        print(i[0].name, i[1])
     
     
 
