@@ -68,7 +68,7 @@ class MonitoringStation:
     def relative_water_level(self):
         stations = build_station_list()
         for station in stations:
-            if station is in list_of_incons_station:
+            if station is in inconsistent_typical_range_stations(stations):
                 return None
             else:
                 fraction_of_typical_range = (station.latest_level - station.typical_range[0])/(station.typical_range[1] - station[0])
