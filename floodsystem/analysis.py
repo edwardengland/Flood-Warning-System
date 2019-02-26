@@ -15,5 +15,7 @@ def polyfit(dates, levels, p):
     y = levels
 
     p_coeff = np.polyfit(x, y, p)
-    plt.plot(x, y, '.')
+    poly = np.poly1d(p_coeff)
 
+    
+    return poly

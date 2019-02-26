@@ -1,4 +1,5 @@
 from floodsystem.stationdata import build_station_list, update_water_levels
+from floodsystem.analysis import polyfit
 
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
@@ -20,3 +21,7 @@ def plot_water_levels(station, dates, levels):
 
     plt.tight_layout()
     plt.show()
+
+#Task 2F
+
+def plot_water_level_with_fit(stations, dates, levels, p):
