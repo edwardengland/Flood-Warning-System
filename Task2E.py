@@ -18,7 +18,7 @@ def run():
         levels_list = [] 
         dt = 10
         dates, levels = fetch_measure_levels(i[0].measure_id, dt = datetime.timedelta(days = dt))
-        
+
         for date, level in zip(dates, levels):
                 times.append(date)
                 levels_list.append(level)
