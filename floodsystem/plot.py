@@ -41,20 +41,10 @@ def plot_water_level_with_fit(station, dates, levels, p):
     plt.plot([date_number[0], date_number[-1]], [typ_high, typ_high])
     plt.plot([date_number[0], date_number[-1]], [typ_low, typ_low])
     
-    
-    
     plt.xlabel('date')
     plt.ylabel('water level (m)')
     plt.xticks(rotation=45)
     plt.title(station.name)
-    
-
-    
-
-    
-
-    
-    
 
     plt.tight_layout()
     plt.show()
