@@ -12,6 +12,11 @@ def plot_water_levels(station, dates, levels):
     plt.ylabel('water level (m)')
     plt.xticks(rotation=45);
     plt.title(station.name)
+    typ_high = [station.typical_range[1]]
+    typ_low = [station.typical_range[0]]
+
+    plt.plot([dates[0], dates[-1]], [typ_high, typ_high])
+    plt.plot([dates[0], dates[-1]], [typ_low, typ_low])
 
     plt.tight_layout()
     plt.show()
